@@ -37,21 +37,21 @@ export class FeedbackFormComponent implements OnInit, OnDestroy {
         });
     }
 
-    checkNoHelp() {
+    checkNoHelp(): void {
         this.feedbackForm.controls.helpfulRating.setValue('No');
         this.notHelpful = true;
     }
 
-    checkHelpful() {
+    checkHelpful(): void {
         this.feedbackForm.controls.helpfulRating.setValue('Yes');
     }
 
-    onCancel() {
+    onCancel(): void {
         this.feedbackForm.reset();
         this.notHelpful = false;
     }
 
-    onSubmit() {
+    onSubmit(): void {
         if (this.feedbackForm.invalid && this.notHelpful === true) {
             return;
         }
@@ -75,7 +75,7 @@ export class FeedbackFormComponent implements OnInit, OnDestroy {
         this.feedbackForm.reset();
     }
 
-    ngOnDestroy() {
+    ngOnDestroy(): void {
         this.unsubscribe.next();
         this.unsubscribe.complete();
     }
