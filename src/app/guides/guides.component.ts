@@ -48,7 +48,7 @@ export class GuidesComponent implements OnDestroy {
     }
 
     // Handle changes to the select component and navigate
-    selectUpdate(event: any): void {
+    selectUpdate(event: unknown): void {
         for (const entry of this.guidesService.guides) {
             if (event === entry.title) {
                 this.router.navigate(['/web/guides/' + entry.route]);
@@ -59,7 +59,7 @@ export class GuidesComponent implements OnDestroy {
     }
 
     // Handle nav changes via the sidebar
-    navUpdate(page: any): void {
+    navUpdate(page: unknown): void {
         this.router.navigate(['/web/guides/' + page]);
         window.scrollTo(0, 0);
     }

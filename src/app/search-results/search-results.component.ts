@@ -153,7 +153,7 @@ export class SearchResultsComponent implements AfterViewInit {
     }
 
     /**Filters the results from miniSearch based on the filter values */
-    displayResults(filterValues, typeFilterValues): void {
+    displayResults(filterValues: any, typeFilterValues: any): void {
         //  Checks if the searchBarContent value is empty or not
         if (this.searchBarContent.value !== '') {
             const res = this.searchService.miniSearch.search(this.searchBarContent.value, {

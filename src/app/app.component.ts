@@ -40,7 +40,7 @@ export class AppComponent implements AfterViewInit, OnDestroy {
         });
     }
 
-    ngAfterViewInit() {
+    ngAfterViewInit(): void {
         this.navSearchBar.valueChanges.subscribe((val) => {
             if (val !== '') {
                 const tempResults = this.getItems(val);
@@ -62,11 +62,11 @@ export class AppComponent implements AfterViewInit, OnDestroy {
         return results;
     }
 
-    setInputFocus() {
+    setInputFocus(): void {
         this.input.nativeElement.focus();
     }
 
-    ngOnDestroy() {
+    ngOnDestroy(): void {
         this.unsubscribe.next();
         this.unsubscribe.complete();
     }

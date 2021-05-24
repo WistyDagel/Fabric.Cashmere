@@ -1,6 +1,6 @@
 import { Component, Input, ViewEncapsulation } from '@angular/core';
 
-export function throwErrorForMissingSurveyUri() {
+export function throwErrorForMissingSurveyUri(): void {
     throw Error(`SurveyUri must be specified on element hc-typeform-survey`);
 }
 
@@ -53,7 +53,7 @@ export class TypeformSurveyComponent {
     /**
      * Opens the survey specified in the surveyUri
      */
-    public open() {
+    public open(): void {
         if (!document.getElementById(this._id)) {
             this.getScripts();
         } else {

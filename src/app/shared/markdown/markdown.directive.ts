@@ -30,7 +30,7 @@ export class MarkdownDirective implements OnChanges {
 
         // plugin to markdown-it to interpret :::
         md.use(container_plugin, 'hc-tile', {
-            validate: function(params) {
+            validate: function() {
                 // markdown-it-container allows multiple ::: containers
                 // This function allows you to validate this is the one you want
                 // We only have one, so always validate

@@ -1,11 +1,10 @@
-import {Injectable, ComponentRef, Injector, TemplateRef, Type, ComponentFactory} from '@angular/core';
+import {Injectable, ComponentRef, Injector, TemplateRef, Type} from '@angular/core';
 import {Overlay, OverlayConfig, OverlayRef, PositionStrategy} from '@angular/cdk/overlay';
 import {ComponentPortal, PortalInjector, TemplatePortal} from '@angular/cdk/portal';
 import {HcToastComponent} from './hc-toast.component';
 import {HcToastOptions} from './hc-toast-options';
 import {HcToastRef} from './hc-toast-ref';
-import {filter, take, takeUntil} from 'rxjs/operators';
-import {Subject, Observable} from 'rxjs';
+import {filter, take} from 'rxjs/operators';
 
 export type ComponentSetup<T> = Partial<T> | ((instance: T) => void);
 export type ToastContentType<T> = Type<T> | TemplateRef<any>;
@@ -135,7 +134,7 @@ export class HcToasterService {
     }
 
     /** Closes the most recent toast displayed */
-    closeLastToast() {
+    closeLastToast(): void {
         if (this._toasts.length > 0) {
             const element = this._toasts[this._toasts.length - 1];
             if (element) {
@@ -145,7 +144,7 @@ export class HcToasterService {
     }
 
     /** Closes currently visible toasts */
-    closeAllToasts() {
+    closeAllToasts(): void {
         const len = this._toasts.length;
         for (let index = 0; index < len; index++) {
             const element = this._toasts[index];

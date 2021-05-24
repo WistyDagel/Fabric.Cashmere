@@ -67,7 +67,7 @@ export class FeedbackFormComponent implements OnInit, OnDestroy {
             this.feedbackForm.controls.yourSuggestions.value ? this.feedbackForm.controls.yourSuggestions.value : ''
         );
 
-        this.httpClient.post<any>(this.scriptURL, formData).subscribe(
+        this.httpClient.post<unknown>(this.scriptURL, formData).subscribe(
             res => console.log(res),
             err => console.log(err)
         );

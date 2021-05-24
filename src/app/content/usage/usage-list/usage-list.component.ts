@@ -112,7 +112,7 @@ export class UsageListComponent extends BaseDemoComponent implements OnInit, Aft
         formData.append('comment', this.editListForm.controls.comment.value);
         formData.append('addNew', this.editListForm.controls.addNew.value);
 
-        this.httpClient.post<any>(this.scriptURL, formData).subscribe(
+        this.httpClient.post<unknown>(this.scriptURL, formData).subscribe(
             res => console.log(res),
             err => console.log(err)
         );
